@@ -14,18 +14,18 @@
 //         }
 //     }
 //     return count
-    //use reduce
-    //use regex //how to count someth...
 // }
 
-const getCount = str => {
-    const vowels = ['a', 'o', 'u', 'i', 'e']
+// const getCount = str => {
+//     const vowels = ['a', 'o', 'u', 'i', 'e']
+//     return str.split('').reduce((acc, el) => {
+//         if (vowels.indexOf(el) > -1) acc++
+//         return acc
+//     }, 0)
+// }
 
-    return str.split('').reduce((acc, el) => {
-        if(vowels.indexOf(el) > -1) acc++
-        return acc
-    },0)
-}
+const getCount = str => str.match(/[aeuoi]/gi)?.length || 0
+
 console.log(getCount("abracadabra")) // 5
 console.log(getCount("abracadabr")) // 4
 console.log(getCount("abracadbr")) // 3
